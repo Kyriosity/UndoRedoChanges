@@ -1,0 +1,96 @@
+﻿<UserControl x:Class="WpfUndoRedo.UserControls.AppMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:WpfUndoRedo.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.InputBindings>
+        <KeyBinding Modifiers="Control" Key="Z" Command="{Binding File.Exit.Command}"/>
+    </UserControl.InputBindings>
+    <Menu>
+        <MenuItem Header="_File">
+            <MenuItem Header="Open image...">
+                <MenuItem.Icon>
+                    <Image Source="pack://application:,,,/Resources/OpenFile_16x.png" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <Separator />
+            <MenuItem InputGestureText="Alt+F4" Header="{Binding File.Exit.Content, TargetNullValue=-null-, FallbackValue=-n/a-}"
+                      Command="{Binding File.Exit.Command}">
+                <MenuItem.Icon>
+                    <Image Source="pack://application:,,,/Resources/Exit_16x.png" />
+                </MenuItem.Icon>
+            </MenuItem>
+        </MenuItem>
+        <MenuItem Header="_Edit">
+            <MenuItem Header="Original">
+                <MenuItem.Icon>
+                    <Image Source="pack://application:,,,/Resources/StartPoint_16x.png" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <Separator />
+            <MenuItem Command="{Binding Edit.Undo}" Header="{Binding Edit.UndoContent, FallbackValue=-n/a-, TargetNullValue=-null-}" InputGestureText="Ctrl+Z" 
+                      IsEnabled="{Binding Edit.CanUndo, FallbackValue=False, TargetNullValue=False}">
+                <MenuItem.Icon>
+                    <Image Source="pack://application:,,,/Resources/Undo_grey_16x.png" Style="{StaticResource EnableDisableImage}" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Header="{Binding Edit.RedoName, FallbackValue=-n/a-, TargetNullValue=-null-}" InputGestureText="Ctrl+Y" 
+                      IsEnabled="{Binding Edit.CanRedo, FallbackValue=False, TargetNullValue=False}">
+                <MenuItem.Icon>
+                    <Image Source="pack://application:,,,/Resources/Redo_grey_16x.png" Style="{StaticResource EnableDisableImage}" />
+                </MenuItem.Icon>
+            </MenuItem>
+        </MenuItem>
+        <MenuItem Header="Image">
+            <MenuItem Header="Resize">
+                <MenuItem.Icon>
+                    <Image Source="pack://application:,,,/Resources/Resize_16x.png" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <Separator />
+            <MenuItem Header="Flip _horizontal">
+                <MenuItem.Icon>
+                    <Image Source="pack://application:,,,/Resources/FlipHorizontal_16x.png" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Header="Flip _vertical">
+                <MenuItem.Icon>
+                    <Image Source="pack://application:,,,/Resources/FlipVertical_16x.png" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <Separator />
+            <MenuItem Header="Rotate right">
+                <MenuItem.Icon>
+                    <Image Source="pack://application:,,,/Resources/RotateRight_16x.png" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Header="Rotate left">
+                <MenuItem.Icon>
+                    <Image Source="pack://application:,,,/Resources/RotateLeft_16x.png" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Header="Rotate 180&#186;">
+                <MenuItem.Icon>
+                    <Image Source="pack://application:,,,/Resources/Rotate_16x.png" />
+                </MenuItem.Icon>
+            </MenuItem>
+        </MenuItem>
+        <MenuItem Header="Random">
+            <MenuItem Header="Pollok stroke" />
+        </MenuItem>
+        <MenuItem Header="Effects">
+
+        </MenuItem>
+        <MenuItem Header="Help">
+            <MenuItem Header="About">
+                <MenuItem.Icon>
+                    <Image Source="pack://application:,,,/Resources/InformationSymbol_16x.png" />
+                </MenuItem.Icon>
+            </MenuItem>
+        </MenuItem>
+    </Menu>
+
+</UserControl>

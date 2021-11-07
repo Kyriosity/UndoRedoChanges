@@ -1,0 +1,6 @@
+C:\Users\Kiryl.Drougakov\source\repos\UndoRedoChanges\Solution\WpfUndoRedo\UndoRedoTests\bin\Debug\net5.0\CoverletSourceRootsMapping
+C:\Users\Kiryl.Drougakov\source\repos\UndoRedoChanges\Solution\WpfUndoRedo\UndoRedoTests\obj\Debug\net5.0\UndoRedoTests.csproj.AssemblyReference.cache
+C:\Users\Kiryl.Drougakov\source\repos\UndoRedoChanges\Solution\WpfUndoRedo\UndoRedoTests\obj\Debug\net5.0\UndoRedoTests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kiryl.Drougakov\source\repos\UndoRedoChanges\Solution\WpfUndoRedo\UndoRedoTests\obj\Debug\net5.0\UndoRedoTests.AssemblyInfoInputs.cache
+C:\Users\Kiryl.Drougakov\source\repos\UndoRedoChanges\Solution\WpfUndoRedo\UndoRedoTests\obj\Debug\net5.0\UndoRedoTests.AssemblyInfo.cs
+C:\Users\Kiryl.Drougakov\source\repos\UndoRedoChanges\Solution\WpfUndoRedo\UndoRedoTests\obj\Debug\net5.0\UndoRedoTests.csproj.CoreCompileInputs.cache

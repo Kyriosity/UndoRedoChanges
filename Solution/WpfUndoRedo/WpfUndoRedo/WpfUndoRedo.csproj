@@ -1,0 +1,82 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>AppPicto.ico</ApplicationIcon>
+    <Win32Resource />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\AppPicto.ico" />
+    <None Remove="Resources\Exit_16x.png" />
+    <None Remove="Resources\FlipHorizontal_16x.png" />
+    <None Remove="Resources\FlipVertical_16x.png" />
+    <None Remove="Resources\InformationSymbol_16x.png" />
+    <None Remove="Resources\InformationSymbol_16x.svg" />
+    <None Remove="Resources\OpenFile_16x.png" />
+    <None Remove="Resources\Redo_16x.png" />
+    <None Remove="Resources\Redo_grey_16x.png" />
+    <None Remove="Resources\Resize_16x.png" />
+    <None Remove="Resources\RotateLeft_16x.png" />
+    <None Remove="Resources\RotateRight_16x.png" />
+    <None Remove="Resources\Rotate_16x.png" />
+    <None Remove="Resources\StartPoint_16x.png" />
+    <None Remove="Resources\Undo_16x.png" />
+    <None Remove="Resources\Undo_grey_12x_16x.png" />
+    <None Remove="Resources\Undo_grey_16x.png" />
+    <None Remove="Resources\Undo_red_7x_16x.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="Resources\InformationSymbol_16x.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\AppPicto.ico" />
+    <Resource Include="Resources\Exit_16x.png" />
+    <Resource Include="Resources\FlipHorizontal_16x.png" />
+    <Resource Include="Resources\FlipVertical_16x.png" />
+    <Resource Include="Resources\InformationSymbol_16x.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\InformationSymbol_16x.png" />
+    <Resource Include="Resources\InformationSymbol_16x.svg" />
+    <Resource Include="Resources\OpenFile_16x.png" />
+    <Resource Include="Resources\Redo_16x.png" />
+    <Resource Include="Resources\Redo_grey_16x.png" />
+    <Resource Include="Resources\Resize_16x.png" />
+    <Resource Include="Resources\RotateLeft_16x.png" />
+    <Resource Include="Resources\RotateRight_16x.png" />
+    <Resource Include="Resources\Rotate_16x.png" />
+    <Resource Include="Resources\StartPoint_16x.png" />
+    <Resource Include="Resources\Undo_16x.png" />
+    <Resource Include="Resources\Undo_grey_12x_16x.png" />
+    <Resource Include="Resources\Undo_grey_16x.png" />
+    <Resource Include="Resources\Undo_red_7x_16x.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

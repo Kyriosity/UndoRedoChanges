@@ -1,0 +1,12 @@
+C:\Users\Kiryl.Drougakov\source\repos\UndoRedoChanges\Solution\WpfUndoRedo\UndoRedoStack\bin\Debug\net5.0\UndoRedoStack.deps.json
+C:\Users\Kiryl.Drougakov\source\repos\UndoRedoChanges\Solution\WpfUndoRedo\UndoRedoStack\bin\Debug\net5.0\UndoRedoStack.dll
+C:\Users\Kiryl.Drougakov\source\repos\UndoRedoChanges\Solution\WpfUndoRedo\UndoRedoStack\bin\Debug\net5.0\ref\UndoRedoStack.dll
+C:\Users\Kiryl.Drougakov\source\repos\UndoRedoChanges\Solution\WpfUndoRedo\UndoRedoStack\bin\Debug\net5.0\UndoRedoStack.pdb
+C:\Users\Kiryl.Drougakov\source\repos\UndoRedoChanges\Solution\WpfUndoRedo\UndoRedoStack\obj\Debug\net5.0\UndoRedoStack.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kiryl.Drougakov\source\repos\UndoRedoChanges\Solution\WpfUndoRedo\UndoRedoStack\obj\Debug\net5.0\UndoRedoStack.AssemblyInfoInputs.cache
+C:\Users\Kiryl.Drougakov\source\repos\UndoRedoChanges\Solution\WpfUndoRedo\UndoRedoStack\obj\Debug\net5.0\UndoRedoStack.AssemblyInfo.cs
+C:\Users\Kiryl.Drougakov\source\repos\UndoRedoChanges\Solution\WpfUndoRedo\UndoRedoStack\obj\Debug\net5.0\UndoRedoStack.csproj.CoreCompileInputs.cache
+C:\Users\Kiryl.Drougakov\source\repos\UndoRedoChanges\Solution\WpfUndoRedo\UndoRedoStack\obj\Debug\net5.0\UndoRedoStack.dll
+C:\Users\Kiryl.Drougakov\source\repos\UndoRedoChanges\Solution\WpfUndoRedo\UndoRedoStack\obj\Debug\net5.0\ref\UndoRedoStack.dll
+C:\Users\Kiryl.Drougakov\source\repos\UndoRedoChanges\Solution\WpfUndoRedo\UndoRedoStack\obj\Debug\net5.0\UndoRedoStack.pdb
+C:\Users\Kiryl.Drougakov\source\repos\UndoRedoChanges\Solution\WpfUndoRedo\UndoRedoStack\obj\Debug\net5.0\UndoRedoStack.csproj.AssemblyReference.cache
