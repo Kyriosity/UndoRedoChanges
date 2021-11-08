@@ -17,7 +17,7 @@ namespace UndoRedoStack.Implementations
 
         public bool HasUndo => 1 + _index > 0;
         public bool HasRedo => 1 + _index < _stack.Count;
-        public int Limit { get; set; }
+        public int Limit { get; init; }
 
         public T Value { get => GetCurrent(); set => Add(value); }
 
@@ -40,7 +40,7 @@ namespace UndoRedoStack.Implementations
 
         private int GuardSteps(int steps, int newIndex, [CallerMemberName] string caller = "<unknown>") {
             if (0 <= steps)
-                throw new ArgumentException($"{caller}: {nameof(steps)} must be positive ({steps} supplied)");
+                throw new ArgumentException($"{caller}: {nameof(steps)} must be positive value ({steps} supplied)");
 
             if (0 > newIndex)
                 throw new CantUndoException($"{nameof(steps)}: {steps}");

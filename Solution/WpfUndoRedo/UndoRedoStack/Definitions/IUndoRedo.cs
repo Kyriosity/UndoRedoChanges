@@ -19,15 +19,9 @@ namespace UndoRedoStack.Definitions
         T Value { get; set; }
     }
 
-    public interface IOriginated<T>
+    public interface IKeepingOrigin<T>
     {
         T GetOrigin();
         void SetAsOrigin(int index);
-    }
-
-    public interface IValueHook<T>
-    {
-        T OnSet(T value);
-        T OnGet(T value);
     }
 }
