@@ -15,7 +15,7 @@ namespace UndoRedoStack.Implementations
         private readonly List<T> _stack = new();
         private int _index;
 
-        public bool HasUndo => 1 + _index > 0;
+        public bool HasUndo => _index > 0;
         public bool HasRedo => 1 + _index < _stack.Count;
         public int Limit { get; init; }
 
@@ -39,7 +39,7 @@ namespace UndoRedoStack.Implementations
         }
 
         private int GuardSteps(int steps, int newIndex, [CallerMemberName] string caller = "<unknown>") {
-            if (0 <= steps)
+            if (0 >= steps)
                 throw new ArgumentException($"{caller}: {nameof(steps)} must be positive value ({steps} supplied)");
 
             if (0 > newIndex)

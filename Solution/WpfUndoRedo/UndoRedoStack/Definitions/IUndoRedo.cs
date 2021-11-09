@@ -1,5 +1,4 @@
-﻿
-namespace UndoRedoStack.Definitions
+﻿namespace UndoRedoStack.Definitions
 {
     public interface IUndoRedo
     {
