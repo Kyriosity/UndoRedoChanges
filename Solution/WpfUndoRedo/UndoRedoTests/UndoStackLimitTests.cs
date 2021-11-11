@@ -7,5 +7,9 @@ namespace ReversibleValueTests
 {
     public class UndoStackLimitTests
     {
+        [Test]
+        public void LimitNotReached(string order) {
+
+        }
     }
 }

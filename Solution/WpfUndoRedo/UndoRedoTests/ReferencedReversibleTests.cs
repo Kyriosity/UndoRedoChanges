@@ -41,10 +41,26 @@ namespace ReversibleValueTests
             } while (reversible.HasUndo);
         }
 
+        [Test]
+        public void ObjectChangeOutOfStack() {
+            var id = 0;
+
+            var origin = new TestSubject { Id = ++id, Name = Init };
+
+            IReversible<TestSubject> reversible = new Reversible<TestSubject>(origin);
+            reversible.Value = new TestSubject { Id = ++id, Name = Modi };
+
+            var warning = "WARNING: that's maybe not what you've expected ";
+            origin.Name = warning;
+            reversible.Undo();
+
+            reversible.Value.Name.Should().Be(warning);
+        }
+
         private class TestSubject
         {
-            public string Name { get; init; }
             public int Id { get; init; }
+            public string Name { get; set; }
         }
     }
 }
