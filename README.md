@@ -1,7 +1,7 @@
 # Intro
 Let's improvise the Undo stack, which is practical for most business applications.
 
-Undo/Redo has some other implicit uses than familiar Edit menu:
+Undo/Redo has also some other implicit uses than familiar Edit menu:
 + replace confirmation prompts to prevent "are you sure"-click-fatigue
 + base wizards on it (or similar navigation/browsing)
 + record macros with it
@@ -62,11 +62,12 @@ Some pieces of code are courtesy of edu and Q&A sites (stackoverflow, codeprojec
 
 Some renowned 3d party libs are used, like *fluent assertions*.
 
-Start picture, that we modify in the application, was downloaded from wikipedia - Malevich's ([Black Square](https://en.wikipedia.org/wiki/Black_Square_(painting)). 
-
-
-# Offtop
-Supermatic *Black Square* is known as *Zero point of painting*. Sounds good for our start drawing.
+# Offtopic
+Start bitmap, that we'll modify in the WPF application, is Malevich's [Black Square](https://en.wikipedia.org/wiki/Black_Square_(painting)). 
 
 To modify spots of the picture we gonna use strokes akin to those in the works of Jackson Pollock.
 
+Though works of the both artists are subject of heated debates&nbsp;<sup>**_art**</sup>, we apply them here **only** as pretty good random source and random changes.\
+(Supermatic *Black Square* is known as *Zero point of painting*. Looks good for our start bitmap.)
+
+&nbsp;&nbsp;<sub><sup>**_b**</sup>&nbsp;&nbsp;from "it's not art at all" up to $140M for [No. 5](https://en.wikipedia.org/wiki/No._5,_1948)</sub>
