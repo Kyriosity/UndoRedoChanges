@@ -9,13 +9,13 @@ Undo/Redo has also some other implicit uses than familiar Edit menu:
 # Extra features
 Actually the thing must provide two operations: **Undo** and **Redo**, but let's go further with some stuff like: 
 
-+ Keeping original value
-+ Hooks for adding and retrieving data (e.g. creating a copy for referenced types)
-+ Undo/redo to some index (skipping two or more steps)
-+ Events and exceptions
-+ Timestamping and storing name of the action
-+ *Nice to have:* export/import (i.e. serialization and loading)
-+ *To be discussed:* converting undo stack to macros
+[-] ~~Keeping original value~~
+[?] Hooks for adding and retrieving data (e.g. creating a copy for referenced types)
+[x] Undo/redo to some index (skipping two or more steps)
+[x] Exceptions and ~~events~~
+[ ] Timestamping and naming the actions
+[ ] *Nice to have:* export/import (i.e. serialization and loading)
+[ ] *To be discussed:* converting undo stack to macros
 
 ## Subject of undo/redo
 Our Undo/Redo stack would be a trivial task, unless we look over storing copies of values.
