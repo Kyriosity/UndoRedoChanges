@@ -1,12 +1,16 @@
-# Intro
-Let's improvise the Undo stack, which is practical for most business applications.
+# Value with Undo and Redo
+Let's improvise the Undo stack, which is practical for most business applications. And "attach" it to a value of any type.
+```csharp
+var message = new Reversible<string>();
+```
 
+## Implicit application
 Undo/Redo has also some other implicit uses than familiar Edit menu:
 + replace confirmation prompts to prevent "are you sure"-click-fatigue
 + base wizards on it (or similar navigation/browsing)
 + record macros with it
-
-# Extra feature
++ 
+## Extra feature
 Actually the thing must provide two operations: **Undo** and **Redo**, but let's go further with some stuff like: 
 
 - [ ] ~~Keeping original value~~ // :-1: unrelevant to Undo
@@ -15,7 +19,7 @@ Actually the thing must provide two operations: **Undo** and **Redo**, but let's
 - [ ] Hooks for adding and retrieving data (e.g. creating a copy for referenced types)
 - [ ] Timestamping and naming the actions
 - [ ] *Nice to have:* export/import (i.e. serialization and loading)
-- [ ] *To be discussed:* converting undo stack to macros
+- [ ] *To be discussed:* Issue macros of undo-stack
 
 
 ## Subject of undo/redo
@@ -55,9 +59,15 @@ Use `new()`.
 + Is stack's limit mandatory?
 
 Nope. When not specified/applied, no check is done. Why not when the number of actions is predictable.
++ How to raise events like PropertyChanged for value itself, CanUndo i.a.? Or get hooks, like <code>OnChanged</code>.
+- [x] Override prop setters and protected realization methods
+
++ Why there's an overhead of `.Value` while overloads for `=` look better.
+
+Direct assignment with `=` imply casting (deptiving the code of simplicity). These `imlicit`\`explicit` operators are static - what about access to stack and raising instance events (like PropertyChanged).
 
 # Third parties, copyrights and licences
-Icons and images are download of [Visual Studio Image Library](https://www.microsoft.com/en-us/download/details.aspx?id=35825). Please refer to its EULA.
+Most pictograms and images are courtesy of [Visual Studio Image Library](https://www.microsoft.com/en-us/download/details.aspx?id=35825). Please refer to its EULA.
 
 Some pieces of code are courtesy of edu and Q&A sites (stackoverflow, codeproject and others).
 
