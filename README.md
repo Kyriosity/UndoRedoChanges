@@ -1,16 +1,24 @@
-# Value with Undo and Redo
-Let's improvise the Undo stack, which is practical for most business applications. And "attach" it to a value of any type.
+# Undo/Redo stack on C#
+Let's knock ourselves out to implement Undo, practical for business applications.
 ```csharp
-var message = new Reversible<string>();
+var story = new Reversible<string>("began");
+story.Value = "Mittelspiel";
+story.Value = "happy end"
+story.Undo();
+var middleGame = story.Value;
+story.Undo();
+var beginning = story.Value;
+story.Redo(2);
+var conclusion = story.Value;
 ```
 
 ## Implicit application
-Undo/Redo has also some other implicit uses than familiar Edit menu:
-+ replace confirmation prompts to prevent "are you sure"-click-fatigue
-+ base wizards on it (or similar navigation/browsing)
-+ record macros with it
-+ 
-## Extra feature
+Undo/Redo may also be handy for other uses than familiar *Edit* menu:
++ replace confirmation prompts to prevent fatigue with "are you sure" click-away
++ be base of wizards (or similar navigation/browsing)
++ record macros
+
+## Roadmap and features
 Actually the thing must provide two operations: **Undo** and **Redo**, but let's go further with some stuff like: 
 
 - [ ] ~~Keeping original value~~ // :-1: unrelevant to Undo
@@ -19,59 +27,37 @@ Actually the thing must provide two operations: **Undo** and **Redo**, but let's
 - [ ] Hooks for adding and retrieving data (e.g. creating a copy for referenced types)
 - [ ] Timestamping and naming the actions
 - [ ] *Nice to have:* export/import (i.e. serialization and loading)
-- [ ] *To be discussed:* Issue macros of undo-stack
+- [ ] *To be discussed:* Record and issue macros
 
 
 ## Subject of undo/redo
-Our Undo/Redo stack would be a trivial task, unless we look over storing copies of values.
-
-Consider, that a subject of undo is huge and/or composite:
-+ hi-res bitmap image, where every pixel matters
-+ large binary data 
-+ sophisticated business records
-+ long text (akin to *War and Peace*)
-
-The bitmap is pretty good subject for the following considerations. 
-A change on it (to undo/redo) could be just few pixels or usual flip/rotate. If each time a copy of the image would be stored, it would take too much memory.
-
-Now think about 
-+ resize/resamle,
-+ adding new areas, 
-+ filling with a solid color, or erasing.
-They're just one word action but completely changing the picture. 
-
-To be discussed and developed: some *change scripting* objects.
-
-### Alternatives
-+ On-the-fly compression/archiving could be an easy solution.
-+ Bits-level hashing.
-+ There're must be 3d-parties ready solutions.
-
-I haven't considered any of them, for this project (so far) is more an excercise than a productive GitHub library.
+Our Undo/Redo stack would be a trivial task, unless we regard big data volumes.
+Discussed in a [separate thema](readme+/big_subjects_of_undo.md).
 
 # Q&A
-+ Is stack homogenous?
++ **Is stack homogenous?**
 
 Yeaps, but generic.
 + Where's `Clear()`? 
 
 Use `new()`.
-+ Is stack's limit mandatory?
++ **Is stack's limit mandatory?**
 
-Nope. When not specified/applied, no check is done. Why not when the number of actions is predictable.
-+ How to raise events like PropertyChanged for value itself, CanUndo i.a.? Or get hooks, like <code>OnChanged</code>.
-- [x] Override prop setters and protected realization methods
+Nope. When not specified/applied, no check is done. It's reasonable when the number of actions is predictable.
++ **How to raise events like PropertyChanged for value itself, CanUndo i.a.? Or get hooks, like <code>OnChanged</code>.**
+- [x] Override setters and realization methods
 
-+ Why there's an overhead of `.Value` while overloads for `=` look better.
++ **Why not to overlaod `=` and get rid of `.Value`**
 
-Direct assignment with `=` imply casting (deptiving the code of simplicity). These `imlicit`\`explicit` operators are static - what about access to stack and raising instance events (like PropertyChanged).
+1) Setting would be ambigous (is it new value of or new object?). Casting would deprive `=` of brevity.
+2) `imlicit`\`explicit` operators are static - what about access to instance props and methods?.
 
 # Third parties, copyrights and licences
-Most pictograms and images are courtesy of [Visual Studio Image Library](https://www.microsoft.com/en-us/download/details.aspx?id=35825). Please refer to its EULA.
+- Most pictograms and images are bounty of [Visual Studio Image Library](https://www.microsoft.com/en-us/download/details.aspx?id=35825). Please refer to its EULA.
 
-Some pieces of code are courtesy of edu and Q&A sites (stackoverflow, codeproject and others).
+- Some pieces of code are courtesy of edu and Q&A sites (stackoverflow, codeproject and others).
 
-Some renowned 3d party libs are used, like *fluent assertions*.
+- The app take advantage of renowned 3d party libraries and frameworks, like [fluent assertions](https://fluentassertions.com/).
 
 # Offtopic
 Start bitmap, that we'll modify in the WPF application, is Malevich's [Black Square](https://en.wikipedia.org/wiki/Black_Square_(painting)). 
