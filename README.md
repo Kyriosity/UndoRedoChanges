@@ -12,16 +12,15 @@ story.Redo(2);
 var conclusion = story.Value;
 ```
 
-## Implicit application
+## Implied application
 Undo/Redo may also be handy for other uses than familiar *Edit* menu:
 + replace confirmation prompts to prevent fatigue with "are you sure" click-away
 + be base of wizards (or similar navigation/browsing)
 + record macros
 
 ## Roadmap and features
-Actually the thing must provide two operations: **Undo** and **Redo**, but let's go further with some stuff like: 
-
-- [ ] ~~Keeping original value~~ // :-1: unrelevant to Undo
+Actually the thing ~~must~~ provide two operations: **Undo** and **Redo**, but let's go further with some stuff like:  
+- [ ] ~~Source of original value~~ // :-1: unrelevant to Undo
 - [x] Undo/redo to some index (skipping one or more steps)
 - [x] Exceptions and ~~events~~ // override methods and setters to issue or handle events
 - [ ] Hooks for adding and retrieving data (e.g. creating a copy for referenced types)
@@ -47,10 +46,10 @@ Nope. When not specified/applied, no check is done. It's reasonable when the num
 + **How to raise events like PropertyChanged for value itself, CanUndo i.a.? Or get hooks, like <code>OnChanged</code>.**
 - [x] Override setters and realization methods
 
-+ **Why not to overlaod `=` and get rid of `.Value`**
++ **Why not to overload `=` and get rid of `.Value`**
 
-1) Setting would be ambigous (is it new value of or new object?). Casting would deprive `=` of brevity.
-2) `imlicit`\`explicit` operators are static - what about access to instance props and methods?.
+1) Setting would be ambigous (is it new value within stack or new object initialization?). Casting would deprive `=` of brevity. Direct initialization will hide the type (is **1** `short`, `uint` or `long`?).
+2) operators `implicit`\\`explicit` are static - what about access to instance props and methods?
 
 # Third parties, copyrights and licences
 - Most pictograms and images are bounty of [Visual Studio Image Library](https://www.microsoft.com/en-us/download/details.aspx?id=35825). Please refer to its EULA.
